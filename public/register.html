@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>FSE Chat Room</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <ul class="pages">
+    <li class="chat page">
+      <div class="chatArea">
+        <ul class="messages"></ul>
+      </div>
+      <input class="inputMessage" placeholder="Type here..."/>
+    </li>
+
+    <li class="login page">
+      <!--User-Login-->
+      <div class="avtar">
+	     <img src="images/avtar.png" />
+      </div>
+    	<div class="login-form">
+
+    				<div class="form-text">
+    					<input type="text" class="usernameInput" placeholder="USERNAME" ><br>
+    					<input type="password" class="userPassword" placeholder="PASSWORD" ><br>
+              <input type="password" class="userPasswordAgain" placeholder="CONFIRM PASSWORD" ><br>
+    				  <input type="submit" class="register"  value="SIGN IN" >
+              <input type="submit" class="back"  value="BACK" onClick="window.history.back(-1);">
+            </div>
+
+
+    	</div>
+    <!--/User-Login-->
+   </li>
+  </ul>
+
+  <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/main.js"></script>
+</body>
+</html>
