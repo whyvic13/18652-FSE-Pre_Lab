@@ -6,11 +6,11 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <ul class="pages">
+  <ul id="pages" class="pages">
     <li class="chat page">
       <div id="app" ng-app="chatty">
         <div id="controller" ng-controller="appCtl as app">
-          <div ng-controller="chatCtl as chat" ng-show="app.name" ng-cloak="ng-cloak" class="canvas">
+          <div id="canvas" ng-controller="chatCtl as chat" ng-show="app.name" ng-cloak="ng-cloak" class="canvas">
             <div class="chatroom-meta">
               <h2 ng-click="app.logout()">FSE Chat Room</h2>
             </div>

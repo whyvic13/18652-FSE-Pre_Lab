@@ -145,6 +145,8 @@ $(function() {
       .append($usernameDiv, $messageBodyDiv, $messageTimeDiv);//
 
     addMessageElement($messageDiv, options);
+    
+    $("#chat").animate({ scrollTop: $("#chat")[0].scrollHeight}, 500);
   }
 
   // Adds the visual chat typing message
@@ -323,7 +325,13 @@ $(function() {
 
   // Whenever the server emits 'new message', update the chat body
   socket.on('new message', function (data) {
-    addChatMessage(data);
+    if(data.username == username){
+      addOwnChatMessage(data);
+    }
+    else{
+      addChatMessage(data);
+    }
+    
   });
 
   // Whenever the server emits 'user joined', log it in the chat body
