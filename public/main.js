@@ -98,23 +98,24 @@ $(function() {
       $typingMessages.remove();
     }
 
-    var $usernameDiv = $('<div class="name"/>')
+    var $usernameDiv = $('<div class="name"></div>')
       .text(data.username)
       .css('color', getUsernameColor(data.username));
-    var $messageBodyDiv = $('<div class="message">')
+    var $messageBodyDiv = $('<div class="message"></div>')
       .text(data.message);
       //
-    var $messageTimeDiv = $('<div class="time">')
+    var $messageTimeDiv = $('<div class="time"></div>')
       .text(data.printTime);
       //
     var typingClass = data.typing ? 'typing' : '';
 
-    var $messageDiv = $('<div ng-class="{self: message.content.id==app.id}" class="bubble"></div><br>')
+    var $messageDiv = $('<div ng-class="{self: message.content.id==app.id}" class="bubble"></div>')
       .data('username', data.username)
       .css('display','inline-block')
       .append($usernameDiv, $messageBodyDiv, $messageTimeDiv);//
 
-    addMessageElement($messageDiv, options);
+    //addMessageElement($messageDiv, options);
+    $("#chat").append($messageDiv).append($("<br />")).animate({ scrollTop: $("#chat")[0].scrollHeight}, 500);
   }
 
   //Add Own Chat Message
@@ -128,25 +129,25 @@ $(function() {
       $typingMessages.remove();
     }
 
-    var $usernameDiv = $('<div class="name"/>')
+    var $usernameDiv = $('<div class="name"></div>')
       .text(data.username)
       .css('color', getUsernameColor(data.username));
-    var $messageBodyDiv = $('<div class="message">')
+    var $messageBodyDiv = $('<div class="message"></div>')
       .text(data.message);
       //
-    var $messageTimeDiv = $('<div class="time">')
+    var $messageTimeDiv = $('<div class="time"></div>')
       .text(data.printTime);
       //
     var typingClass = data.typing ? 'typing' : '';
 
-    var $messageDiv = $('<div ng-class="{self: message.content.id==app.id}" class="Ownbubble"></div><br>')
+    var $messageDiv = $('<div ng-class="{self: message.content.id==app.id}" class="Ownbubble"></div>')
       .data('username', data.username)
       .css({'display':'inline-block','background-color':'#33CC33'})
       .append($usernameDiv, $messageBodyDiv, $messageTimeDiv);//
 
-    addMessageElement($messageDiv, options);
+    //addMessageElement($messageDiv, options);
     
-    $("#chat").animate({ scrollTop: $("#chat")[0].scrollHeight}, 500);
+    $("#chat").append($messageDiv).append($("<br />")).animate({ scrollTop: $("#chat")[0].scrollHeight}, 500);
   }
 
   // Adds the visual chat typing message
