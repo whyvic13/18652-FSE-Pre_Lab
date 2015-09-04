@@ -265,14 +265,21 @@ input[type="submit"]:hover {
   padding-top: 3px;
 }
 /* OwnBubble */
+.word-content {
+    min-width: 1px;
+    max-width:60%;
+    padding-right: 10px;
+}
 
 .canvas #chat .Ownbubble {
-  background: #e7f2fa;
-  display: inline-block;
-  position: relative;
-  padding: 10px 60px 10px 20px;
-  margin: 0 30px 10px;
-  border-radius: 11px;
+  line-height: 24px;
+    font-size: 20px;
+    position: relative;
+    border-radius: 11px;
+    min-height:40px;
+    min-width: 1px;
+    padding: 10px;
+    margin: 10px;
 }
 .canvas #chat .Ownbubble::after {
   clear: both;
@@ -282,13 +289,14 @@ input[type="submit"]:hover {
 .canvas #chat .Ownbubble:before {
   content: "";
   position: absolute;
-  bottom: 0;
-  left: -9px;
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 0 0 20px 20px;
-  border-color: transparent transparent #33CC33 transparent;
+  top: 10px;
+    right: -10px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 0 20px 20px;
+    border-color: transparent transparent transparent #33CC33;
+
 }
 .canvas #chat .Ownbubble.self {
   float: right;
@@ -301,7 +309,8 @@ input[type="submit"]:hover {
 }
 .canvas #chat .Ownbubble .name,
 .canvas #chat .Ownbubble .message {
-  display: inline;
+  display: inline-block;
+  word-break: break-all;
 }
 .canvas #chat .Ownbubble .name {
   font-weight: bold;

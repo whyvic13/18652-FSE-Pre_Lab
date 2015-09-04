@@ -140,14 +140,17 @@ $(function() {
       //
     var typingClass = data.typing ? 'typing' : '';
 
+    
     var $messageDiv = $('<div ng-class="{self: message.content.id==app.id}" class="Ownbubble"></div>')
       .data('username', data.username)
       .css({'display':'inline-block','background-color':'#33CC33'})
       .append($usernameDiv, $messageBodyDiv, $messageTimeDiv);//
 
+    var $messageCoverDiv = $('<div class="word-content pull-right"></div>').append($messageDiv);
     //addMessageElement($messageDiv, options);
     
-    $("#chat").append($messageDiv).append($("<br />")).animate({ scrollTop: $("#chat")[0].scrollHeight}, 500);
+    $("#chat").append($messageCoverDiv).append($("<br />")).animate({ scrollTop: $("#chat")[0].scrollHeight}, 500)
+    .append("<div style='clear: both;'></div>");
   }
 
   // Adds the visual chat typing message
