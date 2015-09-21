@@ -1,9 +1,9 @@
 {
-  "name": "socket.io-chat",
+  "name": "FSE-chatroom",
   "version": "0.0.0",
   "description": "A simple chat client using socket.io",
   "main": "index.js",
-  "author": "Grant Timmerman",
+  "author": "Haoyun Wen",
   "private": true,
   "license": "BSD",
   "dependencies": {
@@ -14,6 +14,7 @@
     "socket.io-adapter": "automattic/socket.io-adapter#de5cba",
     "socket.io-client": "automattic/socket.io-client#ba31817",
     "socket.io-parser": "2.2.4",
+    "socket.io": "*",
     "sqlite3": "^3.0.9"
   },
   "devDependencies": {
